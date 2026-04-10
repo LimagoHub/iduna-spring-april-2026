@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/07_StreamCombination/src/main/java/de/streamcombination)",
+      "Bash(mkdir -p /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/07_StreamCombination/gradle/wrapper)",
+      "Bash(cp /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/06_HotColdPublishers/gradle/wrapper/gradle-wrapper.jar /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/07_StreamCombination/gradle/wrapper/gradle-wrapper.jar)",
+      "Bash(cp /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/06_HotColdPublishers/gradle/wrapper/gradle-wrapper.properties /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/07_StreamCombination/gradle/wrapper/gradle-wrapper.properties)",
+      "Bash(cp /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/06_HotColdPublishers/gradlew /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/07_StreamCombination/gradlew)",
+      "Bash(cp /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/06_HotColdPublishers/gradlew.bat /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/07_StreamCombination/gradlew.bat)",
+      "Bash(./gradlew run:*)",
+      "Bash(JAVA_HOME=\"C:/Users/JoachimWagner/.jdks/openjdk-23.0.1\" ./gradlew run)"
+    ]
+  }
+}

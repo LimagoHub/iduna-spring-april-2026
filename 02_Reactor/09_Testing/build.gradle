@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group = 'de.testing'
+version = '1.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.projectreactor:reactor-core:3.7.4'
+    testImplementation 'io.projectreactor:reactor-test:3.7.4'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.0'
+}
+
+test {
+    useJUnitPlatform()
+}

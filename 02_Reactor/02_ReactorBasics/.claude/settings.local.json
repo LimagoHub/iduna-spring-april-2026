@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./gradlew run:*)",
+      "Bash(./gradlew compileJava:*)",
+      "Bash(java:*)",
+      "Read(//c/Program Files/Java//**)",
+      "Read(//c/Program Files/**)",
+      "Bash(JAVA_HOME=\"/c/Program Files/Java/jdk-21\" ./gradlew run:*)",
+      "Bash(JAVA_HOME=\"/c/Program Files/Java/jdk-21\" ./gradlew compileJava:*)",
+      "Bash(mkdir -p C:/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/03_Schedulers/src/main/java/de/schedulers)",
+      "Bash(mkdir -p C:/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/03_Schedulers/gradle/wrapper)",
+      "Bash(cp C:/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/02_ReactorBasics/gradle/wrapper/gradle-wrapper.jar C:/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/03_Schedulers/gradle/wrapper/)",
+      "Bash(cp C:/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/02_ReactorBasics/gradlew C:/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/03_Schedulers/gradlew)",
+      "Bash(cp C:/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/02_ReactorBasics/gradlew.bat C:/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/03_Schedulers/gradlew.bat)"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/09_Testing/src/main/java/de/testing)",
+      "Bash(mkdir -p /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/09_Testing/src/test/java/de/testing)",
+      "Bash(mkdir -p /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/09_Testing/gradle/wrapper)",
+      "Bash(cp /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/08_Backpressure/gradle/wrapper/gradle-wrapper.jar /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/09_Testing/gradle/wrapper/)",
+      "Bash(cp /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/08_Backpressure/gradlew /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/09_Testing/)",
+      "Bash(cp /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/08_Backpressure/gradlew.bat /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/09_Testing/)",
+      "Bash(./gradlew test:*)",
+      "Bash(xargs grep:*)",
+      "Bash(./gradlew run:*)"
+    ]
+  }
+}

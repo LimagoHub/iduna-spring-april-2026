@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/02_ReactorBasics//**)",
+      "Read(//c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/03_Schedulers//**)",
+      "Bash(./gradlew run:*)",
+      "Bash(java:*)",
+      "Bash(./gradlew tasks:*)",
+      "Bash(JAVA_HOME=/c/Users/JoachimWagner/.jdks/openjdk-23.0.1 ./gradlew compileJava)",
+      "Bash(cp:*)"
+    ]
+  }
+}
