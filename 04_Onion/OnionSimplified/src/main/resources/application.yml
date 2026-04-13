@@ -1,0 +1,19 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/oniondb
+      transactions:
+        enabled: false   # true nur bei Replica Set
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+  jmx:
+    enabled: false       # deaktiviert JMX → eliminiert BeanPostProcessor-Reihenfolge-Warnungen
+
+logging:
+  level:
+    root: WARN
+    de.limago.onion: INFO
+    org.springframework.context.support.PostProcessorRegistrationDelegate: ERROR
