@@ -1,7 +1,7 @@
 package de.limago.onion.application.service;
 
 import de.limago.onion.application.port.in.bankaccount.FindBankAccountUseCase;
-import de.limago.onion.application.port.out.BankAccountRepository;
+import de.limago.onion.application.port.outport.BankAccountRepository;
 import de.limago.onion.application.query.bankaccount.BankAccountResult;
 import de.limago.onion.application.query.bankaccount.FindBankAccountByPersonIdQuery;
 import lombok.RequiredArgsConstructor;

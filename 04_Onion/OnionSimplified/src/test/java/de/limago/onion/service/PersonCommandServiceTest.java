@@ -2,9 +2,9 @@ package de.limago.onion.service;
 
 import de.limago.onion.application.command.person.*;
 import de.limago.onion.application.exception.NotFoundException;
-import de.limago.onion.application.port.out.BankAccountRepository;
-import de.limago.onion.application.port.out.DomainEventPublisher;
-import de.limago.onion.application.port.out.PersonRepository;
+import de.limago.onion.application.port.outport.BankAccountRepository;
+import de.limago.onion.application.port.outport.DomainEventPublisher;
+import de.limago.onion.application.port.outport.PersonRepository;
 import de.limago.onion.domain.event.*;
 import de.limago.onion.domain.model.aggregate.BankAccountAggregate;
 import de.limago.onion.domain.model.aggregate.PersonAggregate;
