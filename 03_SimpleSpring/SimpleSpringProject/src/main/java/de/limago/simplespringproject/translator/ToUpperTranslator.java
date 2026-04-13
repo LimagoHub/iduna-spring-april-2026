@@ -7,11 +7,11 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-//@Qualifier("upper")
+@Qualifier("upper")
 
 //@Primary
 
-@Profile("production")
+//@Profile("production")
 public class ToUpperTranslator implements Translator{
     @Override
     public String translate(final String text) {
