@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df63a708-ef29-4b6e-8f97-81184f0bb12d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../01_SimpleFlow/01_SimpleFlow.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../01_SimpleFlow/src/de/application/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../01_SimpleFlow/src/de/processors/MyProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../01_SimpleFlow/src/de/subscriber/EndSubscriber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../01_SimpleFlow/src/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_SimpleSpring/SimpleSpringProject/src/main/java/de/limago/simplespringproject/math/CalcSecure.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../03_SimpleSpring/SimpleSpringProject/src/main/java/de/limago/simplespringproject/math/CalcSecure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_SimpleSpring/SimpleSpringProject/src/main/java/de/limago/simplespringproject/math/CalculatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../03_SimpleSpring/SimpleSpringProject/src/main/java/de/limago/simplespringproject/math/CalculatorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_SimpleSpring/SimpleSpringProject/src/main/java/de/limago/simplespringproject/math/CalculatorLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../03_SimpleSpring/SimpleSpringProject/src/main/java/de/limago/simplespringproject/math/CalculatorLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_SimpleSpring/SimpleSpringProject/src/main/java/de/limago/simplespringproject/runner/MyRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../03_SimpleSpring/SimpleSpringProject/src/main/java/de/limago/simplespringproject/runner/MyRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,12 +38,12 @@
     </system>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\JoachimWagner\.gradle\wrapper\dists\gradle-8.14-bin\38aieal9i53h9rfe7vjup95b9\gradle-8.14" javaHome="C:\Users\JoachimWagner\.jdks\openjdk-23.0.1" gradleVersion="8.14" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\JoachimWagner\.gradle\wrapper\dists\gradle-8.14-bin\38aieal9i53h9rfe7vjup95b9\gradle-8.14" javaHome="C:\Program Files\Java\jdk-21" gradleVersion="8.14" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="3BydHJHGOy3pQiEXDpami4HzlEX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -63,7 +61,7 @@
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/02_ReactorBasics",
+    "last_opened_file_path": "C:/Users/JoachimWagner/Documents/git/iduna/iduna-spring-april-2026/02_Reactor/02_ReactorBasics",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -110,6 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1775465155889</updated>
       <workItem from="1775465157155" duration="5723000" />
+      <workItem from="1776074126785" duration="351000" />
     </task>
     <servers />
   </component>

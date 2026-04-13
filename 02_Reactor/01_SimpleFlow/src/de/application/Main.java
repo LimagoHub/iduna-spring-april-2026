@@ -45,14 +45,14 @@ public class Main {
         // Daten sendet. Daher wird die Kette von Ende nach Anfang aufgebaut.
 
         // Endverbraucher: gibt empfangene Integer aus
-        EndSubscriber<Integer> endSubscriber = new EndSubscriber<>();
+        EndSubscriber<String> endSubscriber = new EndSubscriber<>();
 
         // Processor: transformiert String → Integer (hier: Zeichenlänge)
         // MyProcessor erbt von SubmissionPublisher und implementiert Processor<String, Integer>
-        MyProcessor processor = new MyProcessor(String::length);
+        //MyProcessor processor = new MyProcessor(String::length);
 
         // Processor → EndSubscriber verbinden (Processor als Publisher, EndSubscriber als Subscriber)
-        processor.subscribe(endSubscriber);
+        //processor.subscribe(endSubscriber);
 
         // Publisher: SubmissionPublisher ist die einzige fertige Publisher-Implementierung im JDK.
         // Der parameterlose Konstruktor verwendet ForkJoinPool.commonPool() als Executor
@@ -60,7 +60,7 @@ public class Main {
         SubmissionPublisher<String> publisher = new SubmissionPublisher<>();
 
         // Publisher → Processor verbinden
-        publisher.subscribe(processor);
+        publisher.subscribe(endSubscriber);
 
         // --- 3. Daten senden ---
         // submit() übergibt jedes Element an den Publisher.

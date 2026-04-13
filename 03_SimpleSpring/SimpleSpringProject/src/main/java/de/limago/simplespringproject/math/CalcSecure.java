@@ -1,12 +1,19 @@
 package de.limago.simplespringproject.math;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+@Qualifier("secure")
+@RequiredArgsConstructor
 public class CalcSecure implements Calculator{
 
+
+    @Qualifier("logger")
     private final Calculator calculator;
 
-    public CalcSecure(final Calculator calculator) {
-        this.calculator = calculator;
-    }
+
 
     @Override
     public double add(final double a, final double b) {
