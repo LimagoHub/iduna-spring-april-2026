@@ -1,15 +1,15 @@
 package de.limago.onion.application.queryside.service;
 
-import de.limago.onion.application.exception.NotFoundException;
-import de.limago.onion.application.port.inport.person.FindPersonCompleteUseCase;
-import de.limago.onion.application.port.inport.person.FindPersonUseCase;
-import de.limago.onion.application.port.outport.BankAccountRepository;
-import de.limago.onion.application.port.outport.PersonRepository;
+import de.limago.onion.application.shared.NotFoundException;
+import de.limago.onion.application.commandside.person.port.inport.person.FindPersonCompleteUseCase;
+import de.limago.onion.application.commandside.person.port.inport.person.FindPersonUseCase;
+import de.limago.onion.application.commandside.person.port.outport.BankAccountRepository;
+import de.limago.onion.application.commandside.person.port.outport.PersonRepository;
 import de.limago.onion.application.queryside.query.person.FindPersonByIdQuery;
 import de.limago.onion.application.queryside.query.person.FindPersonCompleteByIdQuery;
 import de.limago.onion.application.queryside.query.person.PersonCompleteResult;
 import de.limago.onion.application.queryside.query.person.PersonResult;
-import de.limago.onion.domain.model.aggregate.PersonAggregate;
+import de.limago.onion.domain.person.aggregate.PersonAggregate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Flux;

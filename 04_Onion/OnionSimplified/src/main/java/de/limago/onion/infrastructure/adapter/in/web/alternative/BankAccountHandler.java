@@ -1,13 +1,13 @@
 package de.limago.onion.infrastructure.adapter.in.web.alternative;
 
-import de.limago.onion.application.commandside.command.bankaccount.ChangeBankAccountCommand;
-import de.limago.onion.application.commandside.command.bankaccount.CreateBankAccountCommand;
-import de.limago.onion.application.exception.NotFoundException;
-import de.limago.onion.application.port.inport.bankaccount.ChangeBankAccountUseCase;
-import de.limago.onion.application.port.inport.bankaccount.CreateBankAccountUseCase;
-import de.limago.onion.application.port.inport.bankaccount.FindBankAccountUseCase;
+import de.limago.onion.application.commandside.person.command.bankaccount.ChangeBankAccountCommand;
+import de.limago.onion.application.commandside.person.command.bankaccount.CreateBankAccountCommand;
+import de.limago.onion.application.shared.NotFoundException;
+import de.limago.onion.application.commandside.person.port.inport.bankaccount.ChangeBankAccountUseCase;
+import de.limago.onion.application.commandside.person.port.inport.bankaccount.CreateBankAccountUseCase;
+import de.limago.onion.application.commandside.person.port.inport.bankaccount.FindBankAccountUseCase;
 import de.limago.onion.application.queryside.query.bankaccount.FindBankAccountByPersonIdQuery;
-import de.limago.onion.domain.model.valueobject.BankDetails;
+import de.limago.onion.domain.person.valueobject.BankDetails;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;

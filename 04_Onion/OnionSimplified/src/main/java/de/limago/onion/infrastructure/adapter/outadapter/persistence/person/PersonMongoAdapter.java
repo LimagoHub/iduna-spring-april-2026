@@ -1,7 +1,7 @@
 package de.limago.onion.infrastructure.adapter.outadapter.persistence.person;
 
-import de.limago.onion.application.port.outport.PersonRepository;
-import de.limago.onion.domain.model.aggregate.PersonAggregate;
+import de.limago.onion.application.commandside.person.port.outport.PersonRepository;
+import de.limago.onion.domain.person.aggregate.PersonAggregate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;

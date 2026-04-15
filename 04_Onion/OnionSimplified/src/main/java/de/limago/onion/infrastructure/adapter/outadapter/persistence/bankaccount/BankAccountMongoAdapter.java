@@ -1,7 +1,7 @@
 package de.limago.onion.infrastructure.adapter.outadapter.persistence.bankaccount;
 
-import de.limago.onion.application.port.outport.BankAccountRepository;
-import de.limago.onion.domain.model.aggregate.BankAccountAggregate;
+import de.limago.onion.application.commandside.person.port.outport.BankAccountRepository;
+import de.limago.onion.domain.person.aggregate.BankAccountAggregate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;

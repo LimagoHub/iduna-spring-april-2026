@@ -1,15 +1,15 @@
 package de.limago.onion.infrastructure.adapter.in.web.alternative;
 
-import de.limago.onion.application.commandside.command.person.CorrectPersonCommand;
-import de.limago.onion.application.commandside.command.person.CreatePersonCommand;
-import de.limago.onion.application.commandside.command.person.DeletePersonCommand;
-import de.limago.onion.application.commandside.command.person.MovePersonCommand;
-import de.limago.onion.application.exception.NotFoundException;
-import de.limago.onion.application.port.inport.person.CorrectPersonUseCase;
-import de.limago.onion.application.port.inport.person.CreatePersonUseCase;
-import de.limago.onion.application.port.inport.person.DeletePersonUseCase;
-import de.limago.onion.application.port.inport.person.MovePersonUseCase;
-import de.limago.onion.domain.model.valueobject.Address;
+import de.limago.onion.application.commandside.person.command.person.CorrectPersonCommand;
+import de.limago.onion.application.commandside.person.command.person.CreatePersonCommand;
+import de.limago.onion.application.commandside.person.command.person.DeletePersonCommand;
+import de.limago.onion.application.commandside.person.command.person.MovePersonCommand;
+import de.limago.onion.application.shared.NotFoundException;
+import de.limago.onion.application.commandside.person.port.inport.person.CorrectPersonUseCase;
+import de.limago.onion.application.commandside.person.port.inport.person.CreatePersonUseCase;
+import de.limago.onion.application.commandside.person.port.inport.person.DeletePersonUseCase;
+import de.limago.onion.application.commandside.person.port.inport.person.MovePersonUseCase;
+import de.limago.onion.domain.person.valueobject.Address;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;

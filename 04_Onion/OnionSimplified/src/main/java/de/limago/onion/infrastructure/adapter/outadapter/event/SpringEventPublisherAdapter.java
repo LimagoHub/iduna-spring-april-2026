@@ -1,6 +1,6 @@
 package de.limago.onion.infrastructure.adapter.outadapter.event;
 
-import de.limago.onion.application.port.outport.DomainEventPublisher;
+import de.limago.onion.application.shared.DomainEventPublisher;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;

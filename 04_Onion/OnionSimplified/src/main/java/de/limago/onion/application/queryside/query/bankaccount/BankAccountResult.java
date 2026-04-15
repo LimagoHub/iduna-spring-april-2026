@@ -1,6 +1,6 @@
 package de.limago.onion.application.queryside.query.bankaccount;
 
-import de.limago.onion.domain.model.valueobject.BankDetails;
+import de.limago.onion.domain.person.valueobject.BankDetails;
 
 import java.util.UUID;
 

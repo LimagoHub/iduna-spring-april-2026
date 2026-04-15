@@ -1,7 +1,7 @@
 package de.limago.onion.infrastructure.adapter.outadapter.persistence.bankaccount;
 
-import de.limago.onion.domain.model.aggregate.BankAccountAggregate;
-import de.limago.onion.domain.model.valueobject.BankDetails;
+import de.limago.onion.domain.person.aggregate.BankAccountAggregate;
+import de.limago.onion.domain.person.valueobject.BankDetails;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

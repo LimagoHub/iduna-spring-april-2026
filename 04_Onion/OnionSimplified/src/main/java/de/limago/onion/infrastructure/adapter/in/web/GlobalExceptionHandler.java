@@ -1,9 +1,10 @@
 package de.limago.onion.infrastructure.adapter.in.web;
 
-import de.limago.onion.application.exception.AlreadyExistsException;
-import de.limago.onion.application.exception.BankAccountServiceException;
-import de.limago.onion.application.exception.NotFoundException;
-import de.limago.onion.application.exception.PersonServiceException;
+import de.limago.onion.application.commandside.person.exception.BankAccountServiceException;
+import de.limago.onion.application.commandside.person.exception.PersonServiceException;
+import de.limago.onion.application.commandside.tiere.schwein.exception.SchweinServiceException;
+import de.limago.onion.application.shared.AlreadyExistsException;
+import de.limago.onion.application.shared.NotFoundException;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -89,6 +90,15 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(BankAccountServiceException.class)
     public ProblemDetail handleBankAccountServiceError(BankAccountServiceException ex, ServerWebExchange exchange) {
         log.error("BankAccountService error [{}]: {}", exchange.getRequest().getPath(), ex.getCause().getMessage(), ex.getCause());
+        ProblemDetail problem = ProblemDetail.forStatusAndDetail(
+                HttpStatus.INTERNAL_SERVER_ERROR, "Ein technischer Fehler ist aufgetreten.");
+        problem.setTitle("Interner Fehler");
+        return problem;
+    }
+
+    @ExceptionHandler(SchweinServiceException.class)
+    public ProblemDetail handleSchweinServiceError(SchweinServiceException ex, ServerWebExchange exchange) {
+        log.error("SchweinService error [{}]: {}", exchange.getRequest().getPath(), ex.getCause().getMessage(), ex.getCause());
         ProblemDetail problem = ProblemDetail.forStatusAndDetail(
                 HttpStatus.INTERNAL_SERVER_ERROR, "Ein technischer Fehler ist aufgetreten.");
         problem.setTitle("Interner Fehler");

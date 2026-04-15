@@ -1,8 +1,8 @@
 package de.limago.onion.infrastructure.adapter.in.web.alternative;
 
-import de.limago.onion.application.exception.NotFoundException;
-import de.limago.onion.application.port.inport.person.FindPersonCompleteUseCase;
-import de.limago.onion.application.port.inport.person.FindPersonUseCase;
+import de.limago.onion.application.shared.NotFoundException;
+import de.limago.onion.application.commandside.person.port.inport.person.FindPersonCompleteUseCase;
+import de.limago.onion.application.commandside.person.port.inport.person.FindPersonUseCase;
 import de.limago.onion.application.queryside.query.person.FindPersonByIdQuery;
 import de.limago.onion.application.queryside.query.person.FindPersonCompleteByIdQuery;
 import de.limago.onion.application.queryside.query.person.PersonCompleteResult;

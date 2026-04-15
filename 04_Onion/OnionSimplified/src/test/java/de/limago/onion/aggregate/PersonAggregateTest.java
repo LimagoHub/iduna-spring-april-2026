@@ -1,12 +1,14 @@
 package de.limago.onion.aggregate;
 
 
-import de.limago.onion.domain.model.aggregate.PersonAggregate;
-import de.limago.onion.domain.model.aggregate.event.*;
-import de.limago.onion.domain.model.valueobject.Address;
+import de.limago.onion.domain.person.aggregate.PersonAggregate;
+import de.limago.onion.domain.person.event.*;
+import de.limago.onion.domain.person.valueobject.Address;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.Instant;
 import java.util.Optional;
@@ -14,6 +16,7 @@ import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(MockitoExtension.class)
 class PersonAggregateTest {
 
     private Address berlinAddress;

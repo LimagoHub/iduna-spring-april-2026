@@ -1,7 +1,7 @@
 package de.limago.onion.infrastructure.adapter.outadapter.persistence.person;
 
-import de.limago.onion.domain.model.aggregate.PersonAggregate;
-import de.limago.onion.domain.model.valueobject.Address;
+import de.limago.onion.domain.person.aggregate.PersonAggregate;
+import de.limago.onion.domain.person.valueobject.Address;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

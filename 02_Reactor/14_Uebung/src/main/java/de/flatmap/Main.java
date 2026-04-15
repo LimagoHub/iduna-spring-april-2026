@@ -21,9 +21,12 @@ public class Main {
         Flux<String> f1 = Flux.using(() -> Files.lines(Path.of("src/main/resources/vornamen.txt")), reactor.core.publisher.Flux::fromStream, Stream::close);
         Flux<String> f2 = Flux.using(() -> Files.lines(Path.of("src/main/resources/nachnamen.txt")), reactor.core.publisher.Flux::fromStream, Stream::close)
                 .subscribeOn(Schedulers.boundedElastic()) // Optimiert für blockierendes I/O
-                .delayElements(Duration.ofMillis(1000));    // Schickt alle 0,5 Sek. einen Namen
+                .delayElements(Duration.ofMillis(100));    // Schickt alle 0,5 Sek. einen Namen
 
-        f2.subscribe(System.out::println);
+
+        //f1.subscribe(System.out::println);
+
+        Uebungen.run(f1, f2);
         f2.blockLast();
 
     }

@@ -36,7 +36,7 @@ public class SecurityConfig {
 
         UserDetails hinz = User.withUsername("hinz")
                 .password(passwordEncoder.encode("geheim"))
-                .roles("VORGESETZTER")
+                .roles("VORGESETZTER", "BAUER")
                 .build();
 
         UserDetails kunz = User.withUsername("kunz")
