@@ -23,6 +23,7 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
@@ -64,6 +65,7 @@ public class PersonCommandController {
         @ApiResponse(responseCode = "409", description = "Person mit dieser ID existiert bereits"),
         @ApiResponse(responseCode = "500", description = "Interner Serverfehler")
     })
+
     @PostMapping
     public Mono<ResponseEntity<Void>> createPerson(@Valid @RequestBody CreatePersonRequest request) {
         return createPersonUseCase.createPerson(request.toCommand())

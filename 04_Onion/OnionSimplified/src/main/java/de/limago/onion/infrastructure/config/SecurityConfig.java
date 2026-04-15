@@ -32,6 +32,8 @@ public class SecurityConfig {
 
     @Bean
     public MapReactiveUserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
+
+
         UserDetails hinz = User.withUsername("hinz")
                 .password(passwordEncoder.encode("geheim"))
                 .roles("VORGESETZTER")

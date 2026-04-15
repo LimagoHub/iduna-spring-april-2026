@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+app:
+  jwt:
+    # Symmetrischer HMAC-SHA256 Key – mindestens 32 Zeichen (256 Bit)
+    secret: "mein-geheimer-jwt-schluessel-fuer-hmac-sha256-mindestens-32-zeichen"
+    expiration-ms: 3600000   # 1 Stunde

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>JWT Demo</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f0f2f5; padding: 2rem; }
+    h1 { font-size: 1.4rem; color: #1a1a2e; margin-bottom: 1.5rem; }
+    h2 { font-size: 1rem; color: #444; margin-bottom: 0.75rem; }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+    }
+
+    .row { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; }
+    input {
+      border: 1px solid #ccc; border-radius: 4px;
+      padding: 0.4rem 0.6rem; font-size: 0.9rem; width: 160px;
+    }
+    button {
+      background: #4f6ef7; color: white; border: none; border-radius: 4px;
+      padding: 0.45rem 1rem; font-size: 0.9rem; cursor: pointer;
+    }
+    button:hover { background: #3a57d4; }
+    button.secondary { background: #6c757d; }
+    button.secondary:hover { background: #565e64; }
+    button.danger { background: #dc3545; }
+    button.danger:hover { background: #b02a37; }
+
+    .token-box {
+      background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px;
+      padding: 0.5rem 0.75rem; font-family: monospace; font-size: 0.78rem;
+      word-break: break-all; color: #495057; margin-top: 0.5rem;
+      display: none;
+    }
+    .token-box.visible { display: block; }
+
+    .result {
+      background: #f8f9fa; border-left: 3px solid #4f6ef7;
+      border-radius: 0 4px 4px 0; padding: 0.6rem 0.75rem;
+      font-family: monospace; font-size: 0.9rem; margin-top: 0.75rem;
+      white-space: pre-wrap; display: none;
+    }
+    .result.visible { display: block; }
+    .result.error { border-left-color: #dc3545; color: #dc3545; }
+    .result.success { border-left-color: #198754; }
+
+    .badge {
+      display: inline-block; padding: 0.2rem 0.55rem;
+      border-radius: 99px; font-size: 0.75rem; font-weight: 600;
+    }
+    .badge.green { background: #d1fae5; color: #065f46; }
+    .badge.red   { background: #fee2e2; color: #991b1b; }
+    .badge.gray  { background: #e5e7eb; color: #374151; }
+
+    label { font-size: 0.85rem; color: #555; }
+
+    #status-bar {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.5rem; font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+
+<h1>JWT Demo &mdash; Spring Boot</h1>
+
+<div id="status-bar">
+  <span>Status:</span>
+  <span id="auth-badge" class="badge gray">nicht eingeloggt</span>
+  <button class="danger" onclick="logout()" style="padding:0.25rem 0.6rem;font-size:0.8rem;display:none" id="logout-btn">Logout</button>
+</div>
+
+<!-- LOGIN -->
+<div class="card">
+  <h2>1. Login &mdash; <code>POST /auth/login</code></h2>
+  <div class="row">
+    <label>User:</label>
+    <input id="username" value="admin" placeholder="Benutzername">
+    <input id="password" value="admin" type="password" placeholder="Passwort">
+    <button onclick="login()">Einloggen</button>
+    <button class="secondary" onclick="setUser('user','user')">Als &quot;user&quot;</button>
+  </div>
+  <div class="token-box" id="token-display"></div>
+  <div class="result" id="login-result"></div>
+</div>
+
+<!-- HELLO -->
+<div class="card">
+  <h2>2. Geschützter Endpunkt &mdash; <code>GET /api/hello</code></h2>
+  <p style="font-size:0.85rem;color:#666;margin-bottom:0.75rem">Erreichbar für alle eingeloggten Benutzer.</p>
+  <button onclick="callApi('/api/hello', 'hello-result')">Aufrufen</button>
+  <div class="result" id="hello-result"></div>
+</div>
+
+<!-- ADMIN -->
+<div class="card">
+  <h2>3. Admin-Endpunkt &mdash; <code>GET /api/admin</code></h2>
+  <p style="font-size:0.85rem;color:#666;margin-bottom:0.75rem">Nur für Benutzer mit Rolle <code>ROLE_ADMIN</code>. Mit &quot;user&quot; kommt HTTP 403.</p>
+  <button onclick="callApi('/api/admin', 'admin-result')">Aufrufen</button>
+  <div class="result" id="admin-result"></div>
+</div>
+
+<!-- FRANKFURT -->
+<div class="card">
+  <h2>4. Frankfurt-Endpunkt &mdash; <code>GET /api/frankfurt</code></h2>
+  <p style="font-size:0.85rem;color:#666;margin-bottom:0.75rem">
+    Nur für Benutzer mit Wohnort <code>Frankfurt</code> (Custom JWT-Claim).<br>
+    <b>admin</b> wohnt in Frankfurt ✓ &nbsp;&nbsp; <b>user</b> wohnt in Berlin ✗ (HTTP 403)
+  </p>
+  <button onclick="callApi('/api/frankfurt', 'frankfurt-result')">Aufrufen</button>
+  <div class="result" id="frankfurt-result"></div>
+</div>
+
+<script>
+  let currentToken = null;
+
+  function setUser(u, p) {
+    document.getElementById('username').value = u;
+    document.getElementById('password').value = p;
+  }
+
+  async function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const resultEl = document.getElementById('login-result');
+    const tokenEl  = document.getElementById('token-display');
+
+    try {
+      const res = await fetch('/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      });
+
+      if (!res.ok) {
+        showResult(resultEl, `HTTP ${res.status} – Falsche Credentials`, 'error');
+        setAuthBadge(false);
+        return;
+      }
+
+      const data = await res.json();
+      currentToken = data.token;
+      tokenEl.textContent = currentToken;
+      tokenEl.classList.add('visible');
+      showResult(resultEl, `Token erhalten (gültig 1 Stunde)`, 'success');
+      setAuthBadge(true, username);
+
+    } catch (e) {
+      showResult(resultEl, 'Verbindungsfehler: ' + e.message, 'error');
+    }
+  }
+
+  async function callApi(path, resultId) {
+    const resultEl = document.getElementById(resultId);
+
+    if (!currentToken) {
+      showResult(resultEl, 'Kein Token vorhanden – bitte zuerst einloggen.', 'error');
+      return;
+    }
+
+    try {
+      const res = await fetch(path, {
+        headers: { 'Authorization': 'Bearer ' + currentToken }
+      });
+
+      if (!res.ok) {
+        const text = await res.text();
+        showResult(resultEl, `HTTP ${res.status}${text ? ' – ' + text : ''}`, 'error');
+        return;
+      }
+
+      const data = await res.json();
+      showResult(resultEl, JSON.stringify(data, null, 2), 'success');
+
+    } catch (e) {
+      showResult(resultEl, 'Verbindungsfehler: ' + e.message, 'error');
+    }
+  }
+
+  function logout() {
+    currentToken = null;
+    document.getElementById('token-display').classList.remove('visible');
+    setAuthBadge(false);
+    ['login-result','hello-result','admin-result','frankfurt-result'].forEach(id => {
+      const el = document.getElementById(id);
+      el.classList.remove('visible','success','error');
+    });
+  }
+
+  function setAuthBadge(loggedIn, username) {
+    const badge  = document.getElementById('auth-badge');
+    const logBtn = document.getElementById('logout-btn');
+    if (loggedIn) {
+      badge.textContent = 'eingeloggt als ' + username;
+      badge.className = 'badge green';
+      logBtn.style.display = 'inline-block';
+    } else {
+      badge.textContent = 'nicht eingeloggt';
+      badge.className = 'badge gray';
+      logBtn.style.display = 'none';
+    }
+  }
+
+  function showResult(el, text, type) {
+    el.textContent = text;
+    el.className = 'result visible ' + type;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/02_ReactorBasics//**)",
+      "Read(//c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/03_Schedulers//**)",
+      "Bash(./gradlew run:*)",
+      "Bash(java:*)",
+      "Bash(./gradlew tasks:*)",
+      "Bash(JAVA_HOME=/c/Users/JoachimWagner/.jdks/openjdk-23.0.1 ./gradlew compileJava)",
+      "Bash(cp:*)",
+      "Bash(ls /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/04_FlatMap/*.kts /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/04_FlatMap/*.md)",
+      "Bash(ls /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/05_ErrorHandling/*.md)",
+      "Bash(ls /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/05_ErrorHandling/*.kts)",
+      "Bash(mkdir -p /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/06_HotColdPublishers/src/main/java/de/hotcold)",
+      "Bash(mkdir -p /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/06_HotColdPublishers/gradle/wrapper)",
+      "Bash(cp /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/05_ErrorHandling/gradle/wrapper/gradle-wrapper.jar /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/06_HotColdPublishers/gradle/wrapper/)",
+      "Bash(cp /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/05_ErrorHandling/gradle/wrapper/gradle-wrapper.properties /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/06_HotColdPublishers/gradle/wrapper/)",
+      "Bash(cp /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/05_ErrorHandling/gradlew /c/Users/JoachimWagner/Documents/git/Limago/limago-reactiv-april-2026/06_HotColdPublishers/)"
+    ]
+  }
+}
